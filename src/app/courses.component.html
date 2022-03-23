@@ -1,0 +1,47 @@
+<!-- <h1 class="text-4xl">{{ getList() }}</h1>
+<ul class="list-reset flex flex-col w-1/4" *ngFor="let courseList of courses">
+  <li class="rounded-t relative -mb-px block border p-4 border-grey">
+    {{ courseList }}
+  </li>
+</ul>
+<br />
+<h1 class="text-4xl">List</h1>
+<p>{{ body | resume:30 }}</p>
+<ul class="list-reset flex flex-col w-1/4">
+  <li class="rounded-t relative -mb-px block border p-4 border-grey">
+    titre: {{ course.titre | uppercase }}
+  </li>
+  <li class="rounded-t relative -mb-px block border p-4 border-grey">
+    avis: {{ course.avis | number:'1.2-2' }}
+  </li>
+  <li class="rounded-t relative -mb-px block border p-4 border-grey">
+    folowers: {{ course.folowers }}
+  </li>
+  <li class="rounded-t relative -mb-px block border p-4 border-grey">
+    prix: {{ course.prix | currency:'MAD' }}
+  </li>
+  <li class="rounded-t relative -mb-px block border p-4 border-grey">
+    pubDate: {{ course.pubDate }}
+  </li>
+  <li class="rounded-t relative -mb-px block border p-4 border-grey"
+   [class.bg-green-900]="isActive"
+   [class.bg-red-900]="!isActive">
+    change
+    <button (click)="myFunction()"> change </button>
+  </li>
+</ul>
+
+<input
+  type="text"
+  [(ngModel)]="email"
+  class="m-4 p-2 ring-4"
+  (keyup.enter)="onKeyup()"
+/>
+{{ email }}
+<button
+  class="bg-red-600 text-white mx-2 px-4 py-1"
+  [class.rounded-xl]="isActive"
+  (click)="onClick($event)"
+>
+  HELLO
+</button> -->

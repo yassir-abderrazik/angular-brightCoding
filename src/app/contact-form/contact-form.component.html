@@ -1,0 +1,78 @@
+<div
+  class="flex items-center justify-center min-h-screen from-teal-100 via-teal-300 to-teal-500 bg-gradient-to-br"
+>
+  <div class="w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl">
+    <div class="max-w-md mx-auto space-y-6">
+      <form #f="ngForm" (ngSubmit)="submit(f)">
+        <div ngModelGroup="contact">
+          <label class="uppercase text-sm font-bold opacity-70"
+            >First name</label
+          >
+          <input
+            type="text"
+            required
+            ngModel
+            #firstName="ngModel"
+            name="firstName"
+            minlength="5"
+            class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none"
+          />
+
+          <div
+            class="text-red-400 mb-4"
+            *ngIf="firstName.touched && !firstName.valid"
+          >
+            Ce champs est obli
+          </div>
+          <label class="uppercase text-sm font-bold opacity-70"
+            >Last name</label
+          >
+          <input
+            type="text"
+            required
+            ngModel
+            #lastName="ngModel"
+            name="lastName"
+            class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded"
+          />
+        </div>
+        <label class="uppercase text-sm font-bold opacity-70">Comment</label>
+        <textarea
+          type="text"
+          required
+          ngModel
+          #comment="ngModel"
+          name="comment"
+          class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded"
+        ></textarea>
+        <label class="uppercase text-sm font-bold opacity-70">Comment</label>
+        <select
+          class="w-full p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none"
+        >
+          <option value="">Javascript</option>
+          <option value="">Ruby</option>
+          <option value="">Python</option>
+          <option value="">PHP</option>
+          <option value="">Java</option>
+        </select>
+        <div class="checkbox">
+            <label class="uppercase text-sm font-bold opacity-70">subscribe</label>
+            <input
+            type="checkbox"
+            required
+            ngModel
+            #subscribe="ngModel"
+            name="subscribe"
+            class="p-3 m-2 bg-slate-200 rounded"
+          />
+        </div>
+        <button
+          class="py-3 px-6 my-2 bg-emerald-500 text-white font-medium rounded ease-in-out duration-300"
+            [disabled]="!f.valid"
+            [class.bg-gray-600]="!f.valid"
+        >ADD</button>
+      </form>
+      {{ f.value | json }}
+    </div>
+  </div>
+</div>
